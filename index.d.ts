@@ -419,7 +419,7 @@ interface ConfigParams {
   /**
    * Endpoint for custom logout URI.
    */
-  logoutEnding?: string;
+  logoutEndpoint?: string;
 
   /**
    * REQUIRED. The Client ID for your application.
