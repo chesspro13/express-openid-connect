@@ -79,6 +79,29 @@ describe('logout route', async () => {
     );
   });
 
+  it('should perform a local logout from a custom endpoint', async () => {
+    server = await createServer(
+      auth({
+        ...defaultConfig,
+        idpLogout: false,
+        logoutEndpoint: '/custom-logout-endpoint/',
+      })
+    );
+
+    const { jar, session: loggedInSession } = await login();
+    assert.ok(loggedInSession.id_token);
+    const { response, session: loggedOutSession } = await logout(jar);
+    assert.notOk(loggedOutSession.id_token);
+    assert.equal(response.statusCode, 302);
+    assert.include(
+      response.headers,
+      {
+        location: 'http://example.org',
+      },
+      'should redirect to the base url'
+    );
+  });
+
   it('should perform a distributed logout', async () => {
     server = await createServer(
       auth({
