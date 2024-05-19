@@ -417,6 +417,11 @@ interface ConfigParams {
   baseURL?: string;
 
   /**
+   * Endpoint for custom logout URI.
+   */
+  logoutEnding?: string;
+
+  /**
    * REQUIRED. The Client ID for your application.
    * Can use env key CLIENT_ID instead.
    */
