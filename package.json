@@ -1,11 +1,11 @@
 {
-  "name": "express-openid-connect",
-  "version": "2.17.1",
-  "description": "Express middleware to protect web applications using OpenID Connect.",
+  "name": "express-openid-connect-diverse",
+  "version": "1.0.0",
+  "description": "Fork of https://github.com/auth0/express-openid-connect to add custom logout endpoints",
   "repository": "auth0/express-openid-connect",
-  "homepage": "https://github.com/auth0/express-openid-connect",
+  "homepage": "https://github.com/chesspro13/express-openid-connect",
   "license": "MIT",
-  "author": "Auth0 <support@auth0.com>",
+  "author": "Chesspro13",
   "main": "index.js",
   "files": [
     "lib",
